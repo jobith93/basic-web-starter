@@ -1,0 +1,140 @@
+/*-----------------------------------------------------------------------------
+    Mixin: font-face mixin
+    Usage: @include font-face($style-name, $file, $family, $category);
+    Details:
+        • $style-name being the name of the font e.g. Helvetica
+        • $file meaning the file name, without the file extensions
+        • $category is serif or sans-serif or monospace etc. as a fall back in CSS
+-----------------------------------------------------------------------------*/
+
+@mixin font-face($style-name, $file, $category: "") {
+  $filepath: "../fonts/" + "/" + $file;
+  @font-face {
+    font-family: "#{$style-name}";
+    src: url($filepath + ".eot");
+    src: url($filepath + ".eot?#iefix") format("embedded-opentype"),
+      url($filepath + ".woff") format("woff"),
+      url($filepath + ".ttf") format("truetype"),
+      url($filepath + ".svg#" + $style-name + "") format("svg");
+  }
+  %#{$style-name} {
+    font: {
+      @if $category != "" {
+        family: "#{$style-name}", #{$category};
+      } @else {
+        family: "#{$style-name}";
+        weight: normal;
+      }
+    }
+  }
+}
+
+// https://codepen.io/giana/pen/RPdLaQ
+@mixin gradient-text($gradient, $bg: "light") {
+  @supports (mix-blend-mode: lighten) {
+    display: inline-block;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background: unquote($gradient);
+      pointer-events: none;
+    }
+
+    @if ($bg == "light") {
+      color: #000;
+      background: #fff;
+      mix-blend-mode: multiply;
+
+      &::before {
+        mix-blend-mode: screen;
+      }
+    } @else {
+      color: #fff;
+      background: #000;
+      mix-blend-mode: lighten;
+
+      &::before {
+        mix-blend-mode: multiply;
+      }
+    }
+  }
+}
+
+// responsive breakpoints
+// https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Desktops
+$screen-xl-min: 1200px;
+
+// Large Desktops
+$screen-xxl-min: 1400px;
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+// Extra extra large devices
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+      @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  @media (min-width: $screen+'px') {
+      @content;
+  }
+}
+
+/*
+// usage
+.my-box {
+  padding: 10px;
+  
+  @include sm {
+    padding: 20px;
+  }
+}
+*/

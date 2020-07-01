@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{% block title %} {% endblock %} | Basic Website</title>
+        <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+        <!-- FontAwesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+
+    <body>
+
+        <!-- navigation -->
+        {% block navigation %} {% endblock %}
+        <!-- end navigation -->
+        
+
+        <!-- main-content -->
+        {% block content %} {% endblock %}
+        <!-- end main-content -->
+
+        <!-- footer -->
+        {% include "includes/footer.njk" %}
+        <!-- end footer -->
+
+        <!-- modals -->
+        {% include "includes/modals.njk" %}
+        <!-- end modals -->
+        
+
+        <!-- script dependencies -->
+            <!-- js vendor files -->
+            <script src="/js/vendor/jquery.min.js"></script>
+            <script src="/js/vendor/slick.js"></script>
+            <script src="/js/vendor/modal-fx.min.js"></script>
+
+            <!-- js main files -->
+            <script src="/js/app.min.js"></script>
+        <!-- end script dependencies -->
+        
+    </body>
+
+</html>

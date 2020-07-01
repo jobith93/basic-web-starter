@@ -1,0 +1,115 @@
+/*--------------------------------------------------------
+  Style Sheet for basic-web-starter
+
+  version: 1.0
+  author: Jobith M Basheer
+  email: jobith@three38inc.com
+  website: http://three38inc.com
+----------------------------------------------------------*/
+
+/*--------------------------------------------------------
+  Table of Contents:
+    -> Variables
+    -> Mixins
+    -> Icons
+    -> Imports
+    -> Fonts
+    -> Layouts
+    -> Helpers
+    -> Navigation
+    -> Section/Page Styles
+      -> Index
+----------------------------------------------------------*/
+
+
+
+
+/* Variables Section */
+@import "utils/variables";
+
+/* Mixins Section */
+@import "utils/mixins";
+
+/* Icons Section */
+@import "utils/icons";
+
+/* Imports Section */
+
+
+
+@import "../../node_modules/bulma/bulma.sass";
+
+// Modal minimal setup
+$transition-duration: .3s;
+$transition-duration-newsPaper: .7s;
+$transition-duration-3dslit: .5s;
+
+$modal-perspective: 1300px;
+$modal-bg-color: rgba($black,.86);
+@import "../../node_modules/bulma-modal-fx/src/_scss/components/modal-fx.scss";
+
+// slick css modifications
+$slick-font-path: '../fonts/slick/';
+$slick-loader-path: "../images/slick/" !default;
+
+
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700&display=swap');
+
+/*
+  Thin        - 100
+  Extra Light - 200
+  Light       - 300
+  Regular     - 400
+  Semi Bold   - 600
+  Bold        - 700
+  Extra Bold  - 800
+  Black       - 900
+*/
+
+// @include font-face('Gotham Book', 'GothamBook', 'sans-serif');
+
+/* Layouts Section */
+html {
+  font-size: 40%;
+
+  @include xl {
+    font-size: 50%;
+  }
+
+  @include xxl {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem; /* 14px */
+  font-family: 'Muli', sans-serif;
+  font-weight: 400;
+  background-color: $background-color;
+}
+
+.mt-2{
+  margin-top: 2rem;
+}
+
+.mt-5{
+  margin-top: 5rem;
+}
+
+
+/* Navigation */
+// @import "components/navigation";
+
+/* Pages / Sections */
+/* Index Page */
+@import "pages/index";
+
+
+

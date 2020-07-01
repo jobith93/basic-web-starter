@@ -1,0 +1,25 @@
+/* basic variables set up */
+
+/* logo colors */
+$logo-color-1: #3655d9;
+$logo-color-2: #281e9d;
+$logo-color-3: #1ac0e2;
+
+/* colors */
+$background-color: #ffffff;
+$background-color-grey: #eff1f6;
+$accent-color    : $logo-color-3;
+
+/* text colors */
+$text-dark : #272727;
+$text-grey : #9098a4;
+$text-light: #ffffff;
+$text-pruple: #949de3;
+
+/* context colors */
+$primary      : $logo-color-3;
+$primary-light: #3298dc;
+$info         : $logo-color-2;
+$success      : #48c774;
+$warning      : #ffdd57;
+$danger       : #f14668;

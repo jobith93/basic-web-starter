@@ -1,0 +1,35 @@
+{
+  "name": "basic-web-starter",
+  "version": "1.0.0",
+  "description": "basic web starter",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "author": "Jobith M Basheer <jobith@three38inc.com>",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {
+    "bulma": "^0.8.1",
+    "bulma-modal-fx": "^1.1.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "jquery": "^3.4.1",
+    "slick-carousel": "^1.8.1"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
